@@ -21,7 +21,7 @@ const authPlugin: Hapi.Plugin<null> = {
   register: async function (server: Hapi.Server) {
     if (!process.env.JWT_SECRET) {
       console.warn(
-        'The JWT_SECRET env var is not set. This is unsafe! If running in production, set it.',
+        'The JWT_SECRET env var is not set. This is unsafe! If running in production, set it.'
       )
     }
 
@@ -108,7 +108,7 @@ interface AuthenticateInput {
 const validateAPIToken = async (
   decoded: APITokenPayload,
   request: Hapi.Request,
-  h: Hapi.ResponseToolkit,
+  h: Hapi.ResponseToolkit
 ) => {
   const { prisma } = request.server.app
   const { tokenId } = decoded
@@ -215,7 +215,7 @@ async function loginHandler(request: Hapi.Request, h: Hapi.ResponseToolkit) {
 
 async function authenticateHandler(
   request: Hapi.Request,
-  h: Hapi.ResponseToolkit,
+  h: Hapi.ResponseToolkit
 ) {
   const { prisma } = request.server.app
   const { email, emailToken } = request.payload as AuthenticateInput

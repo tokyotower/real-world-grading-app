@@ -129,7 +129,7 @@ interface CourseInput {
 
 async function getCourseHandler(
   request: Hapi.Request,
-  h: Hapi.ResponseToolkit,
+  h: Hapi.ResponseToolkit
 ) {
   const { prisma } = request.server.app
   const courseId = parseInt(request.params.courseId, 10)
@@ -156,7 +156,7 @@ async function getCourseHandler(
 
 async function getCoursesHandler(
   request: Hapi.Request,
-  h: Hapi.ResponseToolkit,
+  h: Hapi.ResponseToolkit
 ) {
   const { prisma } = request.server.app
 
@@ -175,7 +175,7 @@ async function getCoursesHandler(
 
 async function createCourseHandler(
   request: Hapi.Request,
-  h: Hapi.ResponseToolkit,
+  h: Hapi.ResponseToolkit
 ) {
   const { prisma } = request.server.app
   const payload = request.payload as CourseInput
@@ -208,7 +208,7 @@ async function createCourseHandler(
 
 async function updateCourseHandler(
   request: Hapi.Request,
-  h: Hapi.ResponseToolkit,
+  h: Hapi.ResponseToolkit
 ) {
   const { prisma } = request.server.app
   const courseId = parseInt(request.params.courseId, 10)
@@ -230,7 +230,7 @@ async function updateCourseHandler(
 
 async function deleteCourseHandler(
   request: Hapi.Request,
-  h: Hapi.ResponseToolkit,
+  h: Hapi.ResponseToolkit
 ) {
   const { prisma } = request.server.app
   const courseId = parseInt(request.params.courseId, 10)
